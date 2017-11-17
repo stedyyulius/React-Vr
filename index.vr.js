@@ -22,24 +22,83 @@ export default class vision_vr extends React.Component {
     }
   }
   componentWillMount(){
-    const rooms = [{
-      name: '1',
-      image: "https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Fruang-kelas.jpeg?alt=media&token=979cfc01-f556-4f2b-a618-20b514b711d1"
-    },{
-      name: '2',
-      image: 'http://www.lughertexture.com/spherical-hdri-360/spherical-360-interior-room-hdri/interior-hdri-36-2774/download'
-    },{
-      name: '4',
-      image: "https://i.ytimg.com/vi/Hus6lQetb2Y/maxresdefault.jpg"
-    },{
-      name: '5',
-      image: "https://i.ytimg.com/vi/1dxF6fEUms8/maxresdefault.jpg"
-    }]
-
+    
+    let id = location.href.split('?')[1].split('=')[1]
+    let rooms = []
+    switch (id) {
+      case '1000': 
+        rooms = [
+          {
+            name: '',
+            image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Fmall_1.jpg?alt=media&token=bff191dc-a1ec-47ea-a817-d614f148d8ff'
+          },
+          {
+            name: '',
+            image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Forori_2.jpg?alt=media&token=62ff5fab-9462-4298-aa7c-1278643892cf'
+          },
+          {
+            name: '',
+            image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Forori_3.jpg?alt=media&token=7c01cd8b-a0e8-429b-9387-a002fb4c4673'
+          }
+      ]
+        break
+      case '1001': 
+        rooms = [
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Forori_1.jpg?alt=media&token=e822ddb5-8fdf-430b-a659-a4e47615e116'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom1_2.jpg?alt=media&token=cfe78188-7cdf-4c28-9874-0fe822d8d55b'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom1_3.jpg?alt=media&token=e2a19314-b460-4c69-8238-e28ed05de50f'
+            }
+        ]
+        break
+      case '1002': 
+        rooms = [
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom1_3.jpg?alt=media&token=e2a19314-b460-4c69-8238-e28ed05de50f'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Fmall_2.jpg?alt=media&token=2e907896-de8e-415e-8ee4-e5fe72657591'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Fmall_3.jpg?alt=media&token=096c09ad-66b4-4943-9370-8afabb593de7'
+            }
+        ]
+        break
+      case '1003': 
+        rooms = [
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom2_1.jpg?alt=media&token=3ba2eccd-099b-4c0c-88af-025c1076a906'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom2_2.jpg?alt=media&token=1c4aa340-d10f-407e-8e31-b8e6528651c3'
+            },
+            {
+              name: '',
+              image: 'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Findosat%2Froom2_3.jpg?alt=media&token=005d9e86-e13f-4f57-9e97-de3f6256cb16'
+            }
+        ]
+        break
+    }
+    
     this.setState({
       rooms: rooms,
       room: rooms[0]
     })
+    
+    //split get
+    //switchcase id 
     console.log(this.state.rooms);
   }
 
@@ -80,7 +139,7 @@ export default class vision_vr extends React.Component {
                                 {rotateY: 0}]}}>
                 <VrButton onClick={()=>this.move('right')}>
                   <Image
-                  source={{uri:'http://www.clker.com/cliparts/0/5/7/9/1195435734741708243kuba_arrow_button_set_2.svg.hi.png'}}
+                  source={{uri:'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2F1195435734741708243kuba_arrow_button_set_2.svg.hi.png?alt=media&token=0b129d8d-66cf-4cb3-84a9-c0047fb27dc8'}}
                   style={{
                     width: this.state.arrow,
                     height: this.state.arrow
@@ -100,7 +159,7 @@ export default class vision_vr extends React.Component {
                                {rotateY: 0}]}}>
                <VrButton onClick={()=>this.move('left')}>
                  <Image
-                 source={{uri:'http://www.clker.com/cliparts/2/9/c/f/11954229651703455648kuba_arrow_button_set_1.svg.med.png'}}
+                 source={{uri:'https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2F1195435734741708243kuba_arrow_button_set_2.svg.hi.png?alt=media&token=0b129d8d-66cf-4cb3-84a9-c0047fb27dc8'}}
                  style={{
                    width: this.state.arrow,
                    height: this.state.arrow
