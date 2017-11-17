@@ -7,8 +7,9 @@ import {
   View,
   Image,
   VrButton,
+  NativeModules
 } from 'react-vr';
-
+const Location = NativeModules.Location;
 export default class vision_vr extends React.Component {
   constructor(props){
     super(props)
@@ -21,12 +22,12 @@ export default class vision_vr extends React.Component {
       arrow: 0.4
     }
   }
-  componentWillMount(){
-    
-    let id = location.href.split('?')[1].split('=')[1]
+  componentDidMount(){
+    console.log(Location.href);
+    let id = Location.href.split('?')[1].split('=')[1]
     let rooms = []
     switch (id) {
-      case '1000': 
+      case '1000':
         rooms = [
           {
             name: '',
@@ -42,7 +43,7 @@ export default class vision_vr extends React.Component {
           }
       ]
         break
-      case '1001': 
+      case '1001':
         rooms = [
             {
               name: '',
@@ -58,7 +59,7 @@ export default class vision_vr extends React.Component {
             }
         ]
         break
-      case '1002': 
+      case '1002':
         rooms = [
             {
               name: '',
@@ -74,7 +75,7 @@ export default class vision_vr extends React.Component {
             }
         ]
         break
-      case '1003': 
+      case '1003':
         rooms = [
             {
               name: '',
@@ -91,15 +92,14 @@ export default class vision_vr extends React.Component {
         ]
         break
     }
-    
+
     this.setState({
       rooms: rooms,
       room: rooms[0]
     })
-    
+
     //split get
-    //switchcase id 
-    console.log(this.state.rooms);
+    //switchcase id
   }
 
   go(detail){
