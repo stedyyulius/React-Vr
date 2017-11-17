@@ -27,10 +27,10 @@ export default class vision_vr extends React.Component {
       image: "https://firebasestorage.googleapis.com/v0/b/grayfox-dfa44.appspot.com/o/room360%2Fruang-kelas.jpeg?alt=media&token=979cfc01-f556-4f2b-a618-20b514b711d1"
     },{
       name: '2',
-      image: 'https://i.ytimg.com/vi/nKZ0Q0MUCOc/maxresdefault.jpg'
+      image: 'http://www.lughertexture.com/spherical-hdri-360/spherical-360-interior-room-hdri/interior-hdri-36-2774/download'
     },{
       name: '4',
-      image: "https://i.ytimg.com/vi/3haKeIc-F_Y/maxresdefault.jpg"
+      image: "https://i.ytimg.com/vi/Hus6lQetb2Y/maxresdefault.jpg"
     },{
       name: '5',
       image: "https://i.ytimg.com/vi/1dxF6fEUms8/maxresdefault.jpg"
